@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<EngineConfig>
+	<ResolutionX>1600</ResolutionX>
+	<ResolutionY>900</ResolutionY>
+	<Fullscreen>False</Fullscreen>
+	<VSync>False</VSync>
+	<Title>PacketTracerSimulator</Title>
+</EngineConfig>

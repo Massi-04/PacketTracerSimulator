@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{17371e54-250b-4fe5-89d6-9820e5652ef6}</ProjectGuid>
+    <RootNamespace>PacketTracerSimulator</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)GLEW_STATIC;ENGINE_DEBUG</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)Libs</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)GLEW_STATIC;</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)Libs</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Graphics\MeshHelpers.cpp" />
+    <ClCompile Include="Source\Sandbox\Light.cpp" />
+    <ClCompile Include="Source\Graphics\LineMesh.cpp" />
+    <ClCompile Include="Source\Sandbox\Cable.cpp" />
+    <ClCompile Include="Libs\ImGui\imgui.cpp" />
+    <ClCompile Include="Libs\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="Libs\ImGui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="Libs\ImGui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Libs\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="Libs\ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="Source\Math\Math.cpp" />
+    <ClCompile Include="Source\Sandbox\Packet.cpp" />
+    <ClCompile Include="Source\Input\InputManager.cpp" />
+    <ClCompile Include="Source\Sandbox\Computer.cpp" />
+    <ClCompile Include="Source\Sandbox\PacketTracerSimulator.cpp" />
+    <ClCompile Include="Source\Graphics\Mesh.cpp" />
+    <ClCompile Include="Source\Graphics\Renderer.cpp" />
+    <ClCompile Include="Source\Graphics\Shader.cpp" />
+    <ClCompile Include="Source\GameFramework\Actor.cpp" />
+    <ClCompile Include="Source\Core\Application.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Utils\FileManager.cpp" />
+    <ClCompile Include="Source\Core\Window.cpp" />
+    <ClCompile Include="Source\Math\Vec2.cpp" />
+    <ClCompile Include="Source\Graphics\Texture.cpp" />
+    <ClCompile Include="Libs\STB\StbImage.cpp" />
+    <ClCompile Include="Source\Graphics\VertexBuffer.cpp" />
+    <ClCompile Include="Source\Sandbox\Switch.cpp" />
+    <ClCompile Include="Source\Utils\TextParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Graphics\MeshHelpers.h" />
+    <ClInclude Include="Source\Sandbox\Light.h" />
+    <ClInclude Include="Source\Graphics\LineMesh.h" />
+    <ClInclude Include="Source\Sandbox\Cable.h" />
+    <ClInclude Include="Libs\ImGui\imconfig.h" />
+    <ClInclude Include="Libs\ImGui\imgui.h" />
+    <ClInclude Include="Libs\ImGui\imgui_impl_glfw.h" />
+    <ClInclude Include="Libs\ImGui\imgui_impl_opengl3.h" />
+    <ClInclude Include="Libs\ImGui\imgui_internal.h" />
+    <ClInclude Include="Libs\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="Libs\ImGui\imstb_textedit.h" />
+    <ClInclude Include="Libs\ImGui\imstb_truetype.h" />
+    <ClInclude Include="Libs\RapidXML\rapidxml.hpp" />
+    <ClInclude Include="Libs\RapidXML\rapidxml_iterators.hpp" />
+    <ClInclude Include="Libs\RapidXML\rapidxml_print.hpp" />
+    <ClInclude Include="Libs\RapidXML\rapidxml_utils.hpp" />
+    <ClInclude Include="Source\Sandbox\Interactable.h" />
+    <ClInclude Include="Source\Sandbox\Packet.h" />
+    <ClInclude Include="Source\Input\InputManager.h" />
+    <ClInclude Include="Source\Math\Math.h" />
+    <ClInclude Include="Source\Sandbox\Computer.h" />
+    <ClInclude Include="Source\Sandbox\PacketTracerSimulator.h" />
+    <ClInclude Include="Source\Graphics\Mesh.h" />
+    <ClInclude Include="Source\Graphics\Renderer.h" />
+    <ClInclude Include="Source\Graphics\Shader.h" />
+    <ClInclude Include="Source\GameFramework\Actor.h" />
+    <ClInclude Include="Source\Core\Application.h" />
+    <ClInclude Include="Libs\GLFW\glfw3.h" />
+    <ClInclude Include="Libs\GLFW\glfw3native.h" />
+    <ClInclude Include="Libs\GL\eglew.h" />
+    <ClInclude Include="Libs\GL\glew.h" />
+    <ClInclude Include="Libs\GL\glxew.h" />
+    <ClInclude Include="Libs\GL\wglew.h" />
+    <ClInclude Include="Source\Core\Base.h" />
+    <ClInclude Include="Source\Utils\Delegate.h" />
+    <ClInclude Include="Source\Utils\FileManager.h" />
+    <ClInclude Include="Source\Utils\List.h" />
+    <ClInclude Include="Source\Core\Window.h" />
+    <ClInclude Include="Source\Math\Vec2.h" />
+    <ClInclude Include="Source\Graphics\Texture.h" />
+    <ClInclude Include="Libs\STB\StbImage.h" />
+    <ClInclude Include="Source\Graphics\VertexBuffer.h" />
+    <ClInclude Include="Source\Sandbox\Switch.h" />
+    <ClInclude Include="Source\Utils\Random.h" />
+    <ClInclude Include="Source\Utils\TextParser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Libs\glew32s.lib" />
+    <Library Include="Libs\glfw3.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assets\CableFragment.shader.txt" />
+    <Text Include="Assets\LightFragment.shader.txt" />
+    <Text Include="Assets\TexturedFragment.shader.txt" />
+    <Text Include="Assets\TexturedVertex.shader.txt" />
+    <Text Include="Assets\LineVertex.shader.txt" />
+    <Text Include="Assets\Vertex.shader.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\CiscoBluePacket.texture.PNG" />
+    <Image Include="Assets\CiscoComputer.texture.PNG" />
+    <Image Include="Assets\CiscoGreenPacket.texture.PNG" />
+    <Image Include="Assets\CiscoPinkPacket.texture.PNG" />
+    <Image Include="Assets\CiscoSwitch.texture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Assets\Config.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

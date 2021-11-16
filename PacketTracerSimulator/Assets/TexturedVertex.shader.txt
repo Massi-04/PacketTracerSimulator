@@ -1,0 +1,22 @@
+#version 330 core
+
+layout(location = 0) in vec4 position;
+layout(location = 1) in vec2 texCoord;
+out vec2 _texture;
+
+uniform float _engineUnit;
+uniform float _aspectRatio;
+uniform vec2 _location;
+uniform vec2 _scale;
+
+void main()
+{	
+	vec4 pos = position;
+	pos.x /= _aspectRatio;
+	pos.x *= _scale.x;
+	pos.y *= _scale.y;
+	pos.x += _location.x * _engineUnit;
+	pos.y += _location.y * _engineUnit;	
+	gl_Position = pos;
+	_texture = texCoord;
+}
