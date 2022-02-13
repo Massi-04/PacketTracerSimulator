@@ -5,6 +5,8 @@
 #include "Utils/List.h"
 #include "GameFramework/Actor.h"
 
+class Application;
+
 Application& GetApplication();
 
 #define SET_APPLICATION(Class) Application& GetApplication() { static Class app; return app; }
